@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="second.html" method="get">
+            <h1><center> Application Form</center> </h1>
+            <h3>Select the Paper for Appearence</h3> 
+            <input type="radio" value="B.Tech/B.E" name="Examination Related Details:">B.Tech/B.E
+            <input type="radio" value="B.Arch/B.Plan" name="Examination Related Details:">B.Arch/B.Plan<br><br>
+            <h3> Select the Examination Centre</h3>
+            <select name='Select the Examination Centre'>
+           <option value="coimbatore">Coimbatore</option> 
+           
+            
+            <option value="ernakulam">Ernakulam</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Trivandrum">Trivandrum</option>
+            <option value="Bangalore">Bangalore</option> 
+            </select>
+            <h3>Choose the prefered language medium</h3> 
+              <input type="radio" value="english" name="medium:">English
+              <input type="radio" value="hindi"    name="medium:">Hindi
+              <input type="radio" value="gujarati" name="medium:">Gujarati
+              
+              <h3> Personal Details:</h3>
+              Name:<input type="text" pattern="[a-z][A-Z]" title="only characters" placeholder="Enter your name" required><br><br>
+              Father's Name:<input type="text" pattern="[a-z][A-Z]" title="only characters" placeholder="Enter father's name" required><br><br>
+              Mother's Name:<input type="text" pattern="[a-z][A-Z]" title="only characters" placeholder="Enter mother's name" required><br><br>
+              <h3> Disability </h3>
+              <input type="radio" value="yes" name="disability:">yes<br><br>
+              <input type="radio" value="yes" name="disability:">no<br><br>
+             
+              Address:<input type="text" pattern='[a-z][A-Z][0-10]'><br><br>
+             
+              DOB:<input type="date"><br><br>
+              Gender:<input type="radio" value="male" name="gender">Male<br>
+                    <input type="radio" value="female" name="gender">Female<br><br>
+                       
+              <h3>Academic Details  :</h3>
+              <label><b>Year of Passing 10th or equivalent:</b></label>
+    <input type="date" name="day">
+    <br>
+    <br>
+     <label><b>School Board Of Class 12th/Qualifying Examination</b></label>
+    <br>
+    <select>
+        <option value="CBSE">CBSE</option> 
+        <option value="ICSE">ICSE</option> 
+        <option value="STATE">STATE</option> 
+        <option value="STATE">OTHER</option>        
+    </select><br><br>
+    <br>
+    <label><b>Name Of The Qualifying Exam Passed/Appearing</b></label>
+    <br>
+    <select>
+        <option value="CBSE">CBSE</option> 
+        <option value="ICSE">ICSE</option> 
+        <option value="STATE">STATE</option> 
+        <option value="STATE">OTHER</option>
+    </select><br><br>
+    <br>
+    <label><b>Place Of Class 12th/Qualifying Exam Schooling</b></label>
+    <br>
+    <input type="text" placeholder="Enter Place Name" name="text" required>
+    <br><br>
+    <label><b>Year Of Passing or Appearing Class 12th/Qualifying Examination</b></label>
+    <select>
+        <option value="num">2019</option> 
+        <option value="num">2018</option> 
+        <option value="num">2017</option> 
+         <option value="num">2016</option> 
+        
+    </select>
+    <br>
+   <label><b> Percentage Of Marks in Class 12th </b></label>
+    <br>
+    <input type="number" min="1" max="100" name="percentage" required>
+    <br><br>
+    <label><b>Name of the college/school from where passed/appearing</b></label>
+    <br>
+    <input type="text" placeholder="Enter the name of the college" name="text" required>
+    <br><br>
+    <label><b>Address of the school/college from where passed or appearing</b></label>
+    <br>
+    <input type="text" placeholder="Enter the name of the college" name="text" required>
+    <br><br>
+    
+    <h3>Contact Details</h3>
+    <label><b>E-mail</b></label>
+    <br>
+    <input type="email" name ="email">
+    <br>
+    <label><b>Mobile Number</b></label>
+    <br>
+    <input type="number" max="13" name="number" required>
+    <br>
+    <label><b>Landline Number</b></label>
+    <br>
+    <input type="number" name="number" required>
+    <br>
+    <h3>Password specifications:</h3>
+    <label><b>Enter a password :</b></label>
+    <input type="password" name="pass" pattern="(?=.*[0-9])(?=.*[a-z A-Z]).{8,13}" required><br>
+                <label>(must have 8-13 characters. It should have atleast one alphabet and at least one numeric value)<br>
+                </label>
+                    <h2>Uploading of Scanned Documents</h2>
+                    
+                    <label><b>Photoraph :</b></label>
+                    <input type="file" accept=".jpg" required><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<label>(File size:10KB TO 100KB and Dimensions:3.5cm * 4.5cm)<br><br>
+                    </label>
+                   <label><b>Signature :</b></label>
+                   <input type="file" accept=".jpg" required><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<label>(File size:4KB TO 30KB and Dimensions:3.5cm * 1.5cm)
+                    </label>
+                    <center> <input type ="submit" value ="Submit"></center> 
+    
+   
+
+            </form>
+    
+ 
+
+       
+    </body>
+</html>
+
