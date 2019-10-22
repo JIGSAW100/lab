@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercise 6</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #car {
+                position: absolute;
+             }
+        </style>
+    </head>
+    <body style="box-sizing: border-box;">
+        
+        <!--Clock Question 1 Code-->
+        <div style="text-align: center;">
+            <h3><b>Digital Clock</b></h3><br>
+            <span id="time" style="font-size:30px"></span>
+        </div>
+        <br>
+ 
+        <!--Font Size Changing Question 3 Code-->
+        <div>
+            <h3>Change font size!</h3>
+            <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+                move cursor over me to zoom in...
+            </p>
+            
+        </div>
+       
+        <!--Car Animation Question 4 Code-->
+        <div>
+            <h3>Car Animation</h3>
+            
+            <input type="button" onclick="moveCar()" value='Move'>
+            <input type="button" onclick="stopCar()" value='Stop!!!!!'>
+            <img id='car' src="http://assets.stickpng.com/thumbs/580b585b2edbce24c47b2c1a.png" style='width: 200px;'></img>
+        </div>
+        
+        <br><br><br><br><br><br>
+        
+        <!-- Question 5 Code-->
+        <div>
+            <h3>Array</h3>
+            <input type="button" onclick="listarray()" value='Display'><br>
+            <span id="resultvalue"></span>
+        </div>
+        
+        <!-- Scripting -->
+        <script>
+            var myvar = setInterval(timeDate, 1000);
+            var color = setInterval(randomColor, 2000);
+            function timeDate(){
+                var display = document.getElementById('time');
+                var d = new Date();
+                var hr = d.getHours();
+                var min = d.getMinutes();
+                var sec = d.getSeconds();
+                display.innerHTML = hr+':'+min+':'+sec ;
+            };
+            
+            function randomColor(){
+                var red = Math.floor(Math.random()*255);
+                var blue = Math.floor(Math.random()*255);
+                var green = Math.floor(Math.random()*255);
+                var color= "rgb("+red+","+green+","+blue+")";
+                
+                document.body.style.backgroundColor = color;
+            };
+            
+            
+            function incSize(){
+                document.getElementById("para1").style="font-size:28px"
+            };
+            
+            function decSize(){
+                document.getElementById("para1").style="font-size:18px"
+            };
+            
+            
+            var id,car = document.getElementById('car'), pos = 500;
+            function moveCar(){
+                id = setInterval(frame, 20);
+                function frame() {
+                  if (pos == 0) {
+                    clearInterval(id);
+                    pos = 500;
+                  } else {
+                    pos--; 
+                    car.style.left = pos + 'px'; 
+                    car.style.right = pos + 'px'; 
+                  }
+                }
+            };
+            
+            function stopCar(){
+                clearInterval(id);
+                pos = car.getBoundingClientRect().left;
+                
+            };
+            
+            
+            function Student(fname,lname,yob) {
+                  this.fname = fname;
+                  this.lname = lname;
+                  this.yob = yob;
+            }
+            
+            function listarray(){
+                var student = new Array(3);
+                student[0] = new Student("John","Paul", 1945);
+                student[1] = new Student("Chris","Cooker", 1945);
+                student[2] = new Student("Akshai","Player", 1945);
+            
+                var result = document.getElementById('resultvalue');
+                for(var i=0; i<student.length; i++){
+                    result.innerHTML += student[i].fname + " " + student[i].lname + "<br>";  
+                }
+
+                
+            }
+            
+            
+        </script>
+            
+    </body>
+</html>
