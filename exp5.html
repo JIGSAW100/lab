@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exp 5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <fieldset>
+            <h1> Question 1</h1>
+            <script>
+                //alert("Exercise 5");
+                //var a = confirm("welcome");
+                var a = prompt("enter: ")
+                document.writeln(a + "<br>");
+                document.write("string length :" + a.length + "<br>");
+                var words = a.split(" ");
+                document.write("number of words :" + words.length + "<br>");
+                long_len = words[0].length;
+                long_word = words[0];
+                for (var i = 0; i < words.length; i++) {
+                    document.write(words[i].length + ",");
+                }
+                for (var i = 0; i < words.length; i++) {
+                    if (words[i].length > long_len) {
+                        long_len = words[i].length;
+                        long_word = words[i];
+                    }
+                }
+                document.write("longest word:" + long_word);
+            </script>
+
+            <p id="p1"></p>
+            <input type ="button" value="load data" onclick="show()">
+            <script>
+                function show() {
+                    document.getElementById("p1").innerText = "from JS";
+                }
+            </script>
+
+
+            <br>
+
+            <h1>Question 2</h1>
+            Web Tech: <input type="text" id="web" /><br />
+            Database: <input type="text" id="data" /><br />
+            <button onclick="calculate();">Get Grade!</button>
+            Your Grade is <span id="score"></span>. <br />
+            <script>
+                function calculate() {
+                    var web = document.getElementById("web").value;
+                    var data = document.getElementById("data").value;
+                    var score = (parseInt(web) + parseInt(data)) / 2;
+                    document.getElementById("score").innerHTML = data;
+                    if (score >= 95) {
+                        document.getElementById("score").innerHTML = "O";
+                    } else if (score >= 90 && score <= 95) {
+                        document.getElementById("score").innerHTML = "S";
+                    } else if (score >= 80 && score <= 90) {
+                        document.getElementById("score").innerHTML = "A";
+                    } else if (score >= 70 && score <= 80) {
+                        document.getElementById("score").innerHTML = "B";
+                    } else if (score >= 60 && score <= 70) {
+                        document.getElementById("score").innerHTML = "C";
+                    } else if (score >= 50 && score <= 60) {
+                        document.getElementById("score").innerHTML = "P";
+                    } else if (score < 50) {
+                        document.getElementById("score").innerHTML = "R";
+                    }
+                }
+            </script>
+
+            <br>
+
+            <h1>Question 3</h1>
+            <div>
+                Rows: <input type="text" id ="rows" />
+                Columns: <input type="text" id ="columns" /> <br />
+                <button onclick="design();">Design Pattern</button>
+            </div>
+            <div id="pattern"></div>
+            <script>
+                function design()
+                {
+                    var r = parseInt(document.getElementById("rows").value);
+                    var c = parseInt(document.getElementById("columns").value);
+                    for (var i = 0; i < r; i++)
+                    {
+                        for (var j = 0; j < c; j++) {
+                            document.getElementById("pattern").innerHTML += "<img src='download.jpg' width=50px height=50px>"
+                        }
+                        document.getElementById("pattern").innerHTML += "<br>"
+                    }
+
+                }
+
+            </script>
+
+
+            <br>
+
+            <h1> Question 4 </h1>
+            <fieldset> Convert <input type="text" id="data1" />
+                <select id="from">
+                    <option>Pounds</option>
+                    <option>Kilograms</option>
+                </select>
+                to
+                <select id ="to">
+                    <option>Kilograms</option>
+                    <option>Pounds</option>
+                </select>
+                <button onclick="convert();">Calculate</button> <span id="answer"></span>
+            </fieldset>
+            <script>
+                function convert() {
+                    var index = document.getElementById("from").selectedIndex;
+
+                    var value = document.getElementById("from")[index].value;
+                    var v = document.getElementById("data1").value;
+                    //document.getElementById("answer").innerHTML = v;
+                    //document.getElementById("answer").innerHTML = value;
+                    if (value === "Pounds")
+                    {
+                        var ans = parseInt(v) * 0.43592;
+                        document.getElementById("answer").innerHTML = ans;
+                    } else {
+                        var ans = parseInt(v) * 2.20462;
+                        document.getElementById("answer").innerHTML = ans;
+                    }
+                }
+            </script>
+
+            <br>
+
+            <h1> Question 5 </h1>
+            <h2>Pizza Order form</h2>
+            <fieldset>
+                # of Small pizza <input type="text" id="small" /><br />
+                # of Medium pizza <input type="text" id="medium" /><br />
+                # of Large pizza <input type="text" id="large" /><br />
+                Tip:
+                <label><input type="radio" value="10" name="tip" id="r1" /> 10%</label>
+                <label><input type="radio" value="15" name="tip" id="r2" checked="checked" /> 15% </label>
+                <label><input type="radio" value="20" name="tip" id="r3" /> 20%</label> <br />
+                <button  onclick="calculation()" id="submit">Calculate Order</button>
+            </fieldset>
+            <p>
+                Cost of order: <span id="price"></span>
+            </p>
+
+            <script>
+                function calculation()
+                {
+                    var a = document.getElementById("small").value;
+                    var b = document.getElementById("medium").value;
+                    var c = document.getElementById("large").value;
+                    parseInt(a);
+                    //document.getElementById("price").innerHTML = a;
+                    parseInt(b);
+                    parseInt(c);
+                    var t1 = (a * 100);
+                    var t2 = (b * 200);
+                    var t3 = (c * 400);
+                    var a1 = t1 + t1 * (9 / 100);
+                    var a2 = t2 + t2 * (9 / 100);
+                    var a3 = t3 + t3 * (9 / 100);
+                    // document.getElementById("price").innerHTML = a1;
+                    if (document.getElementById("r1").checked == true)
+                    {
+                        var p = document.getElementById("r1").value;
+                        //document.getElementById("price").innerHTML = p;
+                        var x = parseInt((a1) + a1 * (p / 100));
+                        document.getElementById("price").innerHTML = x;
+                    } else if (document.getElementById("r2").checked == true)
+                    {
+                        var q = document.getElementById("r2").value;
+                        var y = parseInt((a2) + a2 * (q / 100));
+                        document.getElementById("price").innerHTML = y;
+                    } else {
+                        var z = parseInt((a3) + a3 * (20 / 100));
+                        document.getElementById("price").innerHTML = z;
+                    }
+                }
+
+            </script>
+        </fieldset>
+    </body>
+</html>
